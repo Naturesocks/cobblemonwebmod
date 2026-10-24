@@ -1,5 +1,3 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar.Companion.shadowJar
-
 plugins {
     id("com.gradleup.shadow")
     id("dev.architectury.loom")
