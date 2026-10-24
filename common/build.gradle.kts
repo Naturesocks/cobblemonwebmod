@@ -1,5 +1,4 @@
 plugins {
-    id("com.gradleup.shadow")
     id("dev.architectury.loom")
     id("architectury-plugin")
 }
@@ -26,18 +25,11 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 
     implementation("org.nanohttpd:nanohttpd:2.3.1")
-    shadowBundle("org.nanohttpd:nanohttpd:2.3.1")
 }
 
 tasks {
     test {
         useJUnitPlatform()
-    }
-
-    shadowJar {
-        archiveClassifier.set("dev-shadow")
-        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
-        configurations = listOf(shadowBundle)
     }
 }
 
