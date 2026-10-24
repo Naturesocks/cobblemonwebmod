@@ -1,9 +1,9 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar.Companion.shadowJar
 
 plugins {
+    id("com.gradleup.shadow")
     id("dev.architectury.loom")
     id("architectury-plugin")
-    id("com.gradleup.shadow")
 }
 
 architectury {
