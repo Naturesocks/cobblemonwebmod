@@ -44,6 +44,7 @@ dependencies {
     shadowCommon(project(":common", configuration = "transformProductionFabric"))
     shadowCommon(project(":common", configuration = "shadow"))
 
+    implementation("org.nanohttpd:nanohttpd:2.3.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
