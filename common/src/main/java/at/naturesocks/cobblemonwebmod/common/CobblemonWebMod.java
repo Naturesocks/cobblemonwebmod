@@ -15,7 +15,7 @@ public class CobblemonWebMod {
         try {
             ACTIVE_SERVERS.add(new HttpServer());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            // TODO: fix exception
         }
     }
 
