@@ -12,10 +12,7 @@ loom {
     silentMojangMappingsLicense()
 }
 
-val shadowBundle: Configuration by configurations.creating {
-    isCanBeConsumed = false
-    isCanBeResolved = true
-}
+val shadow: Configuration by configurations.shadow
 
 dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
@@ -26,7 +23,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 
     implementation("org.nanohttpd:nanohttpd:2.3.1")
-    shadowBundle("org.nanohttpd:nanohttpd:2.3.1")
+    shadow("org.nanohttpd:nanohttpd:2.3.1")
 }
 
 tasks {
@@ -37,7 +34,7 @@ tasks {
     shadowJar {
         archiveClassifier.set("dev-shadow")
         archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
-        configurations = listOf(shadowBundle)
+        configurations = listOf(shadow)
     }
 }
 

@@ -38,12 +38,11 @@ dependencies {
     }
 
     implementation(project(":common", configuration = "namedElements"))
+    implementation(project(":common", configuration = "shadow"))
     "developmentNeoForge"(project(":common", configuration = "namedElements")) {
         isTransitive = false
     }
     shadowBundle(project(":common", configuration = "transformProductionFabric"))
-
-    shadowBundle("org.nanohttpd:nanohttpd:2.3.1")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
